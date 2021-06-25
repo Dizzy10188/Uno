@@ -1,0 +1,461 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{98C38D35-AD22-49ED-BAC5-BE2745ED759D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Uno</RootNamespace>
+    <AssemblyName>Uno</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ApplicationIcon>Resources\Icon.ico</ApplicationIcon>
+    <TargetFrameworkSubset>Full</TargetFrameworkSubset>
+    <SignManifests>true</SignManifests>
+    <ManifestCertificateThumbprint>F7A02A0718861444CB2B8D9EAF6529F059244057</ManifestCertificateThumbprint>
+    <ManifestKeyFile>Uno_TemporaryKey.pfx</ManifestKeyFile>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <GenerateManifests>true</GenerateManifests>
+    <TargetZone>LocalIntranet</TargetZone>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>false</MapFileExtensions>
+    <ProductName>Uno</ProductName>
+    <PublisherName>Douglas Heriot</PublisherName>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <StartupObject>
+    </StartupObject>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;/win32res:Resources/Icon.png</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>documentation.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;/win32res:Resources/Icon.png</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>documentation.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutBox.Designer.cs">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Card.cs" />
+    <Compile Include="Game.cs" />
+    <Compile Include="GameController.cs" />
+    <Compile Include="GameOptions.cs" />
+    <Compile Include="GameOptionsView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GameOptionsView.Designer.cs">
+      <DependentUpon>GameOptionsView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GameView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GameView.Designer.cs">
+      <DependentUpon>GameView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Help.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Help.Designer.cs">
+      <DependentUpon>Help.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Player.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AboutBox.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GameOptionsView.resx">
+      <DependentUpon>GameOptionsView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GameView.resx">
+      <DependentUpon>GameView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Help.resx">
+      <DependentUpon>Help.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SortedPlayersView.resx">
+      <DependentUpon>SortedPlayersView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SortedPlayerView.resx">
+      <DependentUpon>SortedPlayerView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StartupDisplay.resx">
+      <DependentUpon>StartupDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StartupPlayerView.resx">
+      <DependentUpon>StartupPlayerView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WildColorChooser.resx">
+      <DependentUpon>WildColorChooser.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="SortedPlayersView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SortedPlayersView.Designer.cs">
+      <DependentUpon>SortedPlayersView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SortedPlayerView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SortedPlayerView.Designer.cs">
+      <DependentUpon>SortedPlayerView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StartupDisplay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StartupDisplay.Designer.cs">
+      <DependentUpon>StartupDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StartupPlayerView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StartupPlayerView.Designer.cs">
+      <DependentUpon>StartupPlayerView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tweener.cs" />
+    <Compile Include="WildColorChooser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WildColorChooser.Designer.cs">
+      <DependentUpon>WildColorChooser.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\b0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\b1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\b2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\b3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\b4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\b5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\b6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\b7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\b8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\b9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bd2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\br.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gd2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\r0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\r1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\r2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\r3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\r4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\r5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\r6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\r7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\r8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\r9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rd2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wd4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wild.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\y0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\y1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\y2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\y3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\y4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\y5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\y6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\y7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\y8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\y9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\yd2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\yr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ys.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GameView.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\y_cw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\b_ccw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\b_cw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g_ccw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g_cw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\r_ccw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\r_cw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\y_ccw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Card Table Texture.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Light Card Table Texture.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StartupWindow.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Resources\Icon.ico" />
+    <None Include="Uno_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\end highlight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\computer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\computerSmart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Help_NewGame.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Help_GameOptions.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Help_PlayGame.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Help_UnoRules.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
